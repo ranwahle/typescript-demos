@@ -26,7 +26,7 @@ const interfaceImplementor: AnInterface = {
 // aProtectedMethod(): () => {}});
 
 const a = new MyGenerics(new AConctetClass());
-
+// const regularPromise = new Promise<number>((resolve, reject) => reject()))
 const promise = new PromiseWithError<number, string>((resolve, reject) => {
     const a = Math.random();
     if (a < 0.5) {
@@ -40,15 +40,15 @@ const promise = new PromiseWithError<number, string>((resolve, reject) => {
  promise.then(console.log, console.error);
 
 
-//  const promiseType:PromiseTypeWithError<number, string> = new Promise<number>((resolve, reject) => {
-//     const a = Math.random();
-//     if (a < 0.5) {
-//         resolve(a);
-//     } else {
-//         reject(`The number ${a} is grater than 0.5`);
-//     }
+ const promiseType:PromiseTypeWithError<number, number> = new Promise<number>((resolve, reject) => {
+    const a = Math.random();
+    if (a < 0.5) {
+        resolve(a);
+    } else {
+        reject(`The number ${a} is grater than 0.5`);
+    }
 
-// }) 
+}) 
 
 //promiseType.then(console.log, console.error);
 function genericFunction<T extends object, T1>(arg1: T, arg: T1) : T & T1 {

@@ -10,13 +10,8 @@ export class MyGenericCunstructor<T> {
     }
 }
 
-function genericFunction<T, T1>(arg1: T, arg: T1) : T & T1 {
 
-    return {...arg1, ...arg};
 
-}
-
-console.log('Generic function',genericFunction(1, 4));
 
 const myGeneric = new MyGenericCunstructor({value: 7})
 
